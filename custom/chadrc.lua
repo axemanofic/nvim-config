@@ -6,13 +6,13 @@ local highlights = require("custom.highlights")
 
 M.ui = {
 	theme = "tokyodark",
-	theme_toggle = { "tokyodark", "tokyonight" },
 
 	hl_override = highlights.override,
 	hl_add = highlights.add,
 	statusline = {
+    separator_style = "block",
 		overriden_modules = function()
-			local st_modules = require("nvchad_ui.statusline.vscode_minimal")
+			local st_modules = require "nvchad_ui.statusline.vscode_colored"
 			return {
 				mode = function()
 					return st_modules.mode() .. ""
