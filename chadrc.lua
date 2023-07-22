@@ -15,8 +15,7 @@ M.ui = {
 			local st_modules = require("nvchad_ui.statusline.vscode_minimal")
 			return {
 				mode = function()
-					return st_modules.mode() .. " bruh "
-					-- or just return "" to hide this module
+					return st_modules.mode() .. ""
 				end,
 			}
 		end,
