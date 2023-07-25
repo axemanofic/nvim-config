@@ -11,6 +11,8 @@ M.treesitter = {
 		"tsx",
 		"markdown",
 		"markdown_inline",
+    "python",
+    "toml",
 	},
 	indent = {
 		enable = true,
