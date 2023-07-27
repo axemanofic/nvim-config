@@ -11,8 +11,10 @@ M.treesitter = {
 		"tsx",
 		"markdown",
 		"markdown_inline",
-    "python",
-    "toml",
+		"python",
+		"yaml",
+		"json",
+		"toml",
 	},
 	indent = {
 		enable = true,
@@ -24,15 +26,25 @@ M.treesitter = {
 
 M.mason = {
 	ensure_installed = {
-		-- lua stuff
+		-- LSP
+		"docker-compose-language-service",
+		"dockerfile-language-server",
 		"lua-language-server",
-		"stylua",
+		"pyright",
+		"ruff-lsp",
 
-		-- web dev stuff
-		"css-lsp",
-		"html-lsp",
-		"typescript-language-server",
+		-- DAP
+		-- Empty
+
+		-- Linter
+		"ruff",
+
+		-- Foramatter
+		"black",
+		"blackd-client",
 		"prettier",
+		"prettierd",
+		"stylua",
 	},
 }
 
@@ -49,6 +61,9 @@ M.nvimtree = {
 				git = true,
 			},
 		},
+	},
+	filters = {
+		dotfiles = false,
 	},
 }
 
