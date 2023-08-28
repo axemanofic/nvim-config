@@ -29,5 +29,3 @@ lspconfig.ruff_lsp.setup({
 	end,
 })
 
---
--- lspconfig.pyright.setup { blabla}
