@@ -8,7 +8,7 @@ local f = null_ls.builtins.formatting
 
 local sources = {
   -- formatting
-  f.prettier.with { filetypes = { "html", "markdown", "css" } }, -- so prettier works only on these filetypes
+  f.prettier.with { filetypes = { "html", "markdown", "css", "scss", "sass" } }, -- so prettier works only on these filetypes
   f.stylua,
   f.yamlfmt,
   f.black,

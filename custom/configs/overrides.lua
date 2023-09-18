@@ -32,8 +32,11 @@ M.mason = {
 		"lua-language-server",
 		"pyright",
 		"ruff-lsp",
-
-		-- DAP
+    "typescript-language-server",
+    "html-lsp",
+    "css-lsp",
+    "emmet-language-server",
+    -- DAP
 		-- Empty
 
 		-- Linter
@@ -63,6 +66,7 @@ M.nvimtree = {
 		},
 	},
 	filters = {
+    git_ignored = false,
 		dotfiles = false,
 	},
 }
