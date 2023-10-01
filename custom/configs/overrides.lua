@@ -38,6 +38,8 @@ M.mason = {
 
 		-- Linter
 		"ruff",
+    "eslint-lsp",
+    "eslint_d",
 
 		-- Foramatter
 		"black",
