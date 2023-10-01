@@ -18,9 +18,6 @@ M.treesitter = {
 	},
 	indent = {
 		enable = true,
-		-- disable = {
-		--   "python"
-		-- },
 	},
 }
 
@@ -64,10 +61,6 @@ M.nvimtree = {
 				git = true,
 			},
 		},
-	},
-	filters = {
-    git_ignored = false,
-		dotfiles = false,
 	},
 }
 
