@@ -23,30 +23,23 @@ M.treesitter = {
 
 M.mason = {
 	ensure_installed = {
-		-- LSP
+		"bash-language-server",
+		"black",
 		"docker-compose-language-service",
 		"dockerfile-language-server",
+		"emmet-language-server",
+		"eslint-lsp",
+		"eslint_d",
 		"lua-language-server",
-		"pyright",
-		"ruff-lsp",
-    "typescript-language-server",
-    "html-lsp",
-    "css-lsp",
-    "emmet-language-server",
-    -- DAP
-		-- Empty
-
-		-- Linter
-		"ruff",
-    "eslint-lsp",
-    "eslint_d",
-
-		-- Foramatter
-		"black",
-		"blackd-client",
-		"prettier",
 		"prettierd",
+		"pyright",
+		"ruff",
+		"ruff-lsp",
+		"shellcheck",
+		"shfmt",
 		"stylua",
+		"typescript-language-server",
+		"yamlfmt",
 	},
 }
 

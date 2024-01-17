@@ -16,11 +16,11 @@ local function concatTables(t1, t2)
 end
 
 local format = {
+	f.prettierd,
 	f.stylua,
 	f.yamlfmt,
-	f.blackd,
+	f.black,
 	f.shfmt,
-	f.biome,
 }
 
 local lint = {
