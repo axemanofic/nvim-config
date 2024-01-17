@@ -7,16 +7,29 @@ end
 local f = null_ls.builtins.formatting
 local l = null_ls.builtins.diagnostics
 
-local sources = {
-	-- formatting
-	f.prettier,
+---@overload fun(t1: table, t2: table)
+local function concatTables(t1, t2)
+	for i = 1, #t2 do
+		table.insert(t1, t2[i])
+	end
+	return t1
+end
+
+local format = {
 	f.stylua,
 	f.yamlfmt,
-	f.black,
-	-- lint
-	l.shellcheck,
-  l.eslint,
+	f.blackd,
+	f.shfmt,
+	f.biome,
 }
+
+local lint = {
+	l.eslint_d,
+	l.ruff,
+	l.shellcheck,
+}
+
+local sources = concatTables(format, lint)
 
 null_ls.setup({
 	debug = true,
