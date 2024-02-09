@@ -37,14 +37,6 @@ local plugins = {
 			require("better_escape").setup()
 		end,
 	},
-	{
-		"glepnir/dashboard-nvim",
-		event = "VimEnter",
-		config = function()
-			require("custom.configs.dashboard")
-		end,
-		dependencies = { { "nvim-tree/nvim-web-devicons" } },
-	},
 }
 
 return plugins

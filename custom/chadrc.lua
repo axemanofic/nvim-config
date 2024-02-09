@@ -15,7 +15,7 @@ M.ui = {
 		overriden_modules = nil,
 	},
 	nvdash = {
-		load_on_startup = false,
+		load_on_startup = true,
 	},
 	tabufline = {
 		lazyload = true,
