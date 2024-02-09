@@ -1,26 +1,28 @@
 ---@type ChadrcConfig
 local M = {}
 
+local dashboards = require("custom.configs.dashboard")
 local highlights = require("custom.highlights")
 
 M.ui = {
-	theme = "chadracula",
-	theme_toggle = { "chadracula", "github_light" },
+  theme = "chadracula",
+  theme_toggle = { "chadracula", "github_light" },
 
-	hl_override = highlights.override,
-	hl_add = highlights.add,
-	statusline = {
-		theme = "default",
-		separator_style = "block",
-		overriden_modules = nil,
-	},
-	nvdash = {
-		load_on_startup = true,
-	},
-	tabufline = {
-		lazyload = true,
-		overriden_modules = nil,
-	},
+  hl_override = highlights.override,
+  hl_add = highlights.add,
+  statusline = {
+    theme = "default",
+    separator_style = "block",
+    overriden_modules = nil,
+  },
+  nvdash = {
+    load_on_startup = true,
+    header = dashboards.dashboard.shrek,
+  },
+  tabufline = {
+    lazyload = true,
+    overriden_modules = nil,
+  },
 }
 
 M.plugins = "custom.plugins"
