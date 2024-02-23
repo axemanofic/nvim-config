@@ -12,7 +12,6 @@ M.ui = {
   hl_add = highlights.add,
   statusline = {
     theme = "default",
-    separator_style = "block",
     overriden_modules = nil,
   },
   nvdash = {
