@@ -33,31 +33,36 @@ lspconfig.tsserver.setup({
   },
 })
 
+-- PYTHON LSP
+
+local function on_new_config(config, root_dir)
+  local env = vim.trim(vim.fn.system('cd "' .. root_dir .. '"; poetry env info -p 2>/dev/null'))
+  if string.len(env) > 0 then
+    config.settings.python.pythonPath = env .. "/bin/python"
+  end
+end
+
 lspconfig.pyright.setup({
   capabilities = capabilities,
   on_attach = on_attach,
-  -- settings = {
-  --   pyright = {
-  --     disableOrganizeImports = true,
-  --   },
-  --   python = {
-  --     analysis = {
-  --       ignore = { "*" },
-  --     },
-  --   },
-  -- },
-  on_new_config = function(config, root_dir)
-    local env = vim.trim(vim.fn.system('cd "' .. root_dir .. '"; poetry env info -p 2>/dev/null'))
-    if string.len(env) > 0 then
-      config.settings.python.pythonPath = env .. "/bin/python"
-    end
-  end,
+  settings = {
+    pyright = {
+      disableOrganizeImports = true,
+    },
+    python = {
+      analysis = {
+        ignore = { "*" },
+      },
+    },
+  },
+  on_new_config = on_new_config,
 })
 
--- lspconfig.ruff_lsp.setup({
---   on_attach = function(client)
---     if client.name == "ruff_lsp" then
---       client.server_capabilities.hoverProvider = false
---     end
---   end,
--- })
+lspconfig.ruff_lsp.setup({
+  on_attach = function(client)
+    if client.name == "ruff_lsp" then
+      client.server_capabilities.hoverProvider = false
+    end
+  end,
+  on_new_config = on_new_config,
+})
