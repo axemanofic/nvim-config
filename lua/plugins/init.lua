@@ -31,6 +31,6 @@ return {
   {
     "nvim-tree/nvim-tree.lua",
     opts = nvimtree.opts,
-    config = nvimtree.config
+    config = nvimtree.config,
   },
 }
