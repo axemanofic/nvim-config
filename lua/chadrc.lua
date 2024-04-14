@@ -28,6 +28,9 @@ M.ui = {
     lazyload = true,
     overriden_modules = nil,
   },
+  term = {
+    sizes = {vsp = 0.4}
+  },
 }
 
 return M

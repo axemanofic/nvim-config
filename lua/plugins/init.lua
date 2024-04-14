@@ -1,5 +1,3 @@
-local nvimtree = require "nvimtree"
-
 return {
   {
     "stevearc/conform.nvim",
@@ -20,17 +18,17 @@ return {
 
   {
     "williamboman/mason.nvim",
-    opts = require "mason",
+    opts = require "configs.mason",
   },
 
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = require "treesitter",
+    opts = require "configs.treesitter",
   },
 
   {
     "nvim-tree/nvim-tree.lua",
-    opts = nvimtree.opts,
-    config = nvimtree.config,
+    opts = require "configs.nvimtree" . opts,
+    config = require "configs.nvimtree" . config,
   },
 }

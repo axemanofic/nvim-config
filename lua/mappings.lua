@@ -1,7 +1,5 @@
 require "nvchad.mappings"
 
-local terminal = require "nvterm.terminal"
-
 -- add yours here
 
 local map = vim.keymap.set
@@ -11,8 +9,16 @@ map("i", "jk", "<ESC>")
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
-map("n", "C-]", terminal.toggle "vertical", { desc = "Open vertical terminal" })
-map("n", "C-\\", terminal.toggle "horizontal", { desc = "Open vertical horizontal" })
+local term_v = function()
+  require("nvchad.term").toggle { pos = "vsp" }
+end
 
-map("t", "C-]", terminal.toggle "vertical", { desc = "Closed vertical terminal" })
-map("t", "C-\\", terminal.toggle "horizontal", { desc = "Closed vertical horizontal" })
+local term_h = function()
+  require("nvchad.term").toggle { pos = "sp" }
+end
+
+map("n", "<C-]>", term_v, { desc = "Open vertical terminal" })
+map("n", "<C-\\>", term_h, { desc = "Open vertical horizontal" })
+--
+map("t", "<C-]>", term_v, { desc = "Closed vertical terminal" })
+map("t", "<C-\\>", term_h, { desc = "Closed vertical horizontal" })
