@@ -1,0 +1,21 @@
+return {
+  ensure_installed = {
+    "bash-language-server",
+    "black",
+    "docker-compose-language-service",
+    "dockerfile-language-server",
+    "emmet-language-server",
+    "eslint-lsp",
+    "eslint_d",
+    "lua-language-server",
+    "prettierd",
+    "pyright",
+    "ruff",
+    "ruff-lsp",
+    "shellcheck",
+    "shfmt",
+    "stylua",
+    "typescript-language-server",
+    "yamlfmt",
+  },
+}
