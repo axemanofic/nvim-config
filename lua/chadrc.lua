@@ -22,7 +22,7 @@ M.ui = {
   },
   nvdash = {
     load_on_startup = true,
-    header = dashboards.dashboard.shrek,
+    header = dashboards.dashboard.pickachu,
   },
   tabufline = {
     lazyload = true,

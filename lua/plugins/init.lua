@@ -28,7 +28,16 @@ return {
 
   {
     "nvim-tree/nvim-tree.lua",
-    opts = require "configs.nvimtree" . opts,
-    config = require "configs.nvimtree" . config,
+    opts = require("configs.nvimtree").opts,
+    config = require("configs.nvimtree").config,
+  },
+
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
   },
 }
