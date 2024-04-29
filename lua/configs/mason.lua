@@ -5,7 +5,6 @@ return {
     "docker-compose-language-service",
     "dockerfile-language-server",
     "emmet-language-server",
-    "eslint-lsp",
     "eslint_d",
     "lua-language-server",
     "prettierd",
