@@ -7,7 +7,6 @@ return {
     "css",
     "javascript",
     "typescript",
-    "jsx",
     "tsx",
     "markdown",
     "markdown_inline",
