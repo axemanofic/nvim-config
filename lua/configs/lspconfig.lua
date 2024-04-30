@@ -55,21 +55,21 @@ local function on_new_config(config, root_dir)
   end
 end
 
--- lspconfig.pyright.setup {
---   capabilities = capabilities,
---   on_attach = on_attach,
---   settings = {
---     pyright = {
---       disableOrganizeImports = true,
---     },
---     python = {
---       analysis = {
---         ignore = { "*" },
---       },
---     },
---   },
---   on_new_config = on_new_config,
--- }
+lspconfig.pyright.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  settings = {
+    pyright = {
+      disableOrganizeImports = true,
+    },
+    python = {
+      analysis = {
+        ignore = { "*" },
+      },
+    },
+  },
+  on_new_config = on_new_config,
+}
 
 lspconfig.ruff_lsp.setup {
   on_attach = function(client)
