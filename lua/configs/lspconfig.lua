@@ -10,7 +10,7 @@ local servers = {
   "bashls",
   "dockerls",
   "lua_ls",
-  "vscode_json_languageservice"
+  "biome",
 }
 
 -- lsps with default config

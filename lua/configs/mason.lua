@@ -19,7 +19,7 @@ local lsp = {
   "djlint",
   "css-lsp",
   "html-lsp",
-  "json-lsp",
+  "biome",
 }
 
 local ensure_installed = require("helpers").concatTables(formaters, lsp)
