@@ -1,5 +1,5 @@
 return {
-    ensure_installed = {
+  ensure_installed = {
     "vim",
     "vimdoc",
     "lua",
@@ -14,6 +14,7 @@ return {
     "yaml",
     "json",
     "toml",
+    "jsonc",
   },
   indent = {
     enable = true,
