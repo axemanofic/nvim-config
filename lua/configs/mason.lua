@@ -8,7 +8,6 @@ local formaters = {
 
 local lsp = {
   "bash-language-server",
-  "docker-compose-language-service",
   "dockerfile-language-server",
   "emmet-language-server",
   "eslint_d",
@@ -18,6 +17,8 @@ local lsp = {
   "shellcheck",
   "typescript-language-server",
   "djlint",
+  "css-lsp",
+  "html-lsp",
 }
 
 local ensure_installed = require("helpers").concatTables(formaters, lsp)
