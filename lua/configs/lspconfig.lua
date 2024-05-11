@@ -4,7 +4,14 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls" }
+local servers = {
+  "html",
+  "cssls",
+  "bash-language-server",
+  "dockerfile-language-server",
+  "docker-compose-language-service",
+  "lua_ls",
+}
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
@@ -58,16 +65,7 @@ end
 lspconfig.pyright.setup {
   capabilities = capabilities,
   on_attach = on_attach,
-  settings = {
-    pyright = {
-      disableOrganizeImports = true,
-    },
-    python = {
-      analysis = {
-        ignore = { "*" },
-      },
-    },
-  },
+  on_init = on_init,
   on_new_config = on_new_config,
 }
 
@@ -77,5 +75,7 @@ lspconfig.ruff_lsp.setup {
       client.server_capabilities.hoverProvider = false
     end
   end,
+  capabilities = capabilities,
+  on_init = on_init,
   on_new_config = on_new_config,
 }
