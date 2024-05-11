@@ -10,6 +10,7 @@ local servers = {
   "bashls",
   "dockerls",
   "lua_ls",
+  "json_lsp"
 }
 
 -- lsps with default config
