@@ -2,7 +2,7 @@
 local on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
-
+local python_on_new_config = require("helpers").python_on_new_config
 local lspconfig = require "lspconfig"
 local servers = {
   "html",
@@ -34,7 +34,7 @@ lspconfig.tsserver.setup {
   },
 }
 
--- Python
+-- HTML/CSS
 lspconfig.emmet_language_server.setup {
   filetypes = { "css", "html", "less", "sass", "scss" },
   init_options = {
@@ -55,18 +55,12 @@ lspconfig.emmet_language_server.setup {
   },
 }
 
-local function on_new_config(config, root_dir)
-  local env = vim.trim(vim.fn.system('cd "' .. root_dir .. '"; poetry env info -p 2>/dev/null'))
-  if string.len(env) > 0 then
-    config.settings.python.pythonPath = env .. "/bin/python"
-  end
-end
-
+-- Python
 lspconfig.pyright.setup {
   capabilities = capabilities,
   on_attach = on_attach,
   on_init = on_init,
-  on_new_config = on_new_config,
+  on_new_config = python_on_new_config,
 }
 
 lspconfig.ruff_lsp.setup {
@@ -77,5 +71,18 @@ lspconfig.ruff_lsp.setup {
   end,
   capabilities = capabilities,
   on_init = on_init,
-  on_new_config = on_new_config,
+  on_new_config = python_on_new_config,
+}
+
+-- Docker
+lspconfig.dockerls.setup {
+  settings = {
+    docker = {
+      languageserver = {
+        formatter = {
+          ignoreMultilineInstructions = true,
+        },
+      },
+    },
+  },
 }
