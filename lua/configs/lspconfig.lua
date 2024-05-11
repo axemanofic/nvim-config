@@ -7,9 +7,9 @@ local lspconfig = require "lspconfig"
 local servers = {
   "html",
   "cssls",
-  "bash-langserver",
-  "docker-langserver",
-  "docker-compose-langserver",
+  "bash_language_server",
+  "dockerfile_language_server",
+  "docker_compose_language_service",
   "lua_ls",
 }
 
