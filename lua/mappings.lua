@@ -18,7 +18,7 @@ local term_h = function()
 end
 
 map("n", "<C-]>", term_v, { desc = "Open vertical terminal" })
-map("n", "<C-\\>", term_h, { desc = "Open vertical horizontal" })
+map("n", "<C-\\>", term_h, { desc = "Open horizontal terminal" })
 --
 map("t", "<C-]>", term_v, { desc = "Closed vertical terminal" })
-map("t", "<C-\\>", term_h, { desc = "Closed vertical horizontal" })
+map("t", "<C-\\>", term_h, { desc = "Closed horizontal terminal" })
