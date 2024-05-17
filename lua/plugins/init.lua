@@ -52,7 +52,6 @@ return {
   },
   {
     "windwp/nvim-ts-autotag",
-    event = "VeryLazy",
     config = function()
       require("nvim-ts-autotag").setup()
     end,
@@ -61,7 +60,6 @@ return {
     "brenoprata10/nvim-highlight-colors",
     opts = highlight_colors.opts,
     config = highlight_colors.config,
-    event = "VeryLazy",
   },
   {
     "MeanderingProgrammer/markdown.nvim",
@@ -69,13 +67,11 @@ return {
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     opts = render_markdown.opts,
     config = render_markdown.config,
-    event = "VeryLazy",
   },
   {
     "folke/neodev.nvim",
     config = function()
       require("neodev").setup {}
     end,
-    event = "VeryLazy",
   },
 }
