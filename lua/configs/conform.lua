@@ -1,4 +1,6 @@
-local options = {
+local M = {}
+
+M.opts = {
   formatters_by_ft = {
     lua = { "stylua" },
     css = { "prettier" },
@@ -17,4 +19,8 @@ local options = {
   },
 }
 
-require("conform").setup(options)
+M.config = function(_, opts)
+  require("conform").setup(opts)
+end
+
+return M

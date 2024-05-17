@@ -1,10 +1,14 @@
+local conform = require "configs.conform"
+local nvimtree = require "configs.nvimtree"
+local highlight_colors = require "configs.highlight_colors"
+local render_markdown = require "configs.render_markdown"
+
 return {
   {
     "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
-    config = function()
-      require "configs.conform"
-    end,
+    event = "BufWritePre", -- uncomment for format on save
+    opts = conform.opts,
+    config = conform.config,
   },
 
   -- These are some examples, uncomment them if you want to see them work!
@@ -28,8 +32,8 @@ return {
 
   {
     "nvim-tree/nvim-tree.lua",
-    opts = require("configs.nvimtree").opts,
-    config = require("configs.nvimtree").config,
+    opts = nvimtree.opts,
+    config = nvimtree.config,
   },
   {
     "folke/trouble.nvim",
@@ -54,35 +58,24 @@ return {
     end,
   },
   {
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    ft = { "markdown" },
-    build = function()
-      vim.fn["mkdp#util#install"]()
-    end,
-  },
-  {
     "brenoprata10/nvim-highlight-colors",
-    opts = {},
-  },
-  {
-    "utilyre/barbecue.nvim",
-    name = "barbecue",
-    version = "*",
-    dependencies = {
-      "SmiteshP/nvim-navic",
-      "nvim-tree/nvim-web-devicons", -- optional dependency
-    },
-    opts = {
-      -- configurations go here
-    },
+    opts = highlight_colors.opts,
+    config = highlight_colors.config,
+    event = "VeryLazy",
   },
   {
     "MeanderingProgrammer/markdown.nvim",
     name = "render-markdown", -- Only needed if you have another plugin named markdown.nvim
     dependencies = { "nvim-treesitter/nvim-treesitter" },
+    opts = render_markdown.opts,
+    config = render_markdown.config,
+    event = "VeryLazy",
+  },
+  {
+    "folke/neodev.nvim",
     config = function()
-      require("render-markdown").setup {}
+      require("neodev").setup {}
     end,
+    event = "VeryLazy",
   },
 }

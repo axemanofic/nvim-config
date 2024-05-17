@@ -1,4 +1,3 @@
----@type ChadrcConfig
 local M = {}
 
 local dashboards = require "configs.dashboard"
@@ -8,10 +7,19 @@ M.ui = {
   theme_toggle = { "chadracula", "github_light" },
 
   hl_override = {
-    Comment = {
-      italic = true,
+    Comment = { italic = true },
+    ["@comment"] = { italic = true },
+    DiffChange = {
+      fg = "#ffd966",
+    },
+    DiffAdd = {
+      fg = "#38761d",
+    },
+    DiffRemoved = {
+      fg = "#cc0000",
     },
   },
+
   hl_add = {
     NvimTreeOpenedFolderName = { fg = "green", bold = true },
   },
@@ -22,14 +30,14 @@ M.ui = {
   },
   nvdash = {
     load_on_startup = true,
-    header = dashboards.dashboard.pickachu,
+    header = dashboards.dashboard.nvim,
   },
   tabufline = {
     lazyload = true,
     overriden_modules = nil,
   },
   term = {
-    sizes = {vsp = 0.4}
+    sizes = { vsp = 0.4 },
   },
 }
 
